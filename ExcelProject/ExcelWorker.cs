@@ -8,16 +8,16 @@ namespace ExcelProject
 {
     public class ExcelWorker
     {
-        public static List<string> data = new List<string>();
+        public static List<GaylordSpreadsheet> data = new List<GaylordSpreadsheet>();
 
 
-        public void ExctractData()
+        public static void ExctractData()
         {
             string file = @"C:\Users\meowm\Github\ExcelProject\Book.xlsx";
             using (ExcelPackage package = new ExcelPackage(new FileInfo(file)))
             {
                 ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
-                var sheet = package.Workbook.Worksheets["Book"];
+                var sheet = package.Workbook.Worksheets["Sheet1"];
                 var gaylordInfo = new ExcelWorker().GetList<GaylordSpreadsheet>(sheet);
                 data = gaylordInfo;
             }

@@ -8,7 +8,9 @@ public class Program
 {
     static void Main(string[] args)
     {
-        foreach(object thing in ExcelWorker.data)
+        ExcelWorker.ExctractData();
+
+        foreach(GaylordSpreadsheet thing in ExcelWorker.data)
         {
             Console.WriteLine(thing);
         }
