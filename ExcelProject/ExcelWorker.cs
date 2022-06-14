@@ -40,7 +40,6 @@ namespace ExcelProject
                     var propType = prop.PropertyType;
                     prop.SetValue(obj, Convert.ChangeType(val, propType));
                 }
-                obj.ToString();
                 list.Add(obj);
             }
 
